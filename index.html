@@ -15,23 +15,23 @@
       <form id="survey-form">
         <section>
           <div>
-            <label>Name</label>
-            <input type="text" id="name" placeholder="Enter your name" />
+            <label id="name-label">Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required />
           </div>
           <div>
-            <label>Email</label>
-            <input type="email" id="email" placeholder="Enter your email" />
+            <label id="email-label">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required />
           </div>
           <div>
-            <label>Number</label>
-            <input type="number" id="number" placeholder="Enter phone number" mask="" />
+            <label id="number-label">Age</label>
+            <input type="number" id="number" placeholder="Enter age" min="18" max="65" />
           </div>
         </section>
         <section>
           <div>
             <div>
               <label>Choose favorite studio</label>
-              <select id="studio-label">
+              <select id="dropdown">
                 <optgroup>
                   <option value="studio01">Studio 1</option>
                   <option value="studio02">Studio 2</option>
@@ -41,8 +41,8 @@
             </div>
             <div>
               <label>Include <em>Studio News Weekly</em></label>
-              <input type="radio" value="0" />No
-              <input type="radio" value="1" />Yes
+              <input type="radio" name="include_studio" value="0" />No
+              <input type="radio" name="include_studio" value="1" />Yes
             </div>
           </div>
           <div>
@@ -57,13 +57,18 @@
           <label>
             Comment
           </label>
-          <textarea id="comment" placeholder="Enter comment" />
+          <textarea id="comment" placeholder="Enter comment"></textarea>
         </section>
-        <input id="submit" type="submit" value="Sign Up" />
+        <button id="submit" click="submit()">Sign Up</button>
       </form>
-    </div>>
-    <p style="text-align: center;">Hello World, we are software developers!</p>
-    
+    </div>
     <script  src="js/index.js"></script>
+    <script type="text/javascript">
+      var form = document.querySelector('#survey-form');
+    
+      function submit(){
+        form.submit()
+      }
+    </script>
   </body>
 </html>
